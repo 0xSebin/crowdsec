@@ -111,7 +111,8 @@ func main() {
 		Short: "cscli allows you to manage crowdsec",
 		Long: `cscli is the main command to interact with your crowdsec service, scenarios & db.
 It is meant to allow you to manage bans, parsers/scenarios/etc, api and generally manage you crowdsec setup.`,
-		ValidArgs: validArgs,
+		ValidArgs:         validArgs,
+		DisableAutoGenTag: true,
 		/*TBD examples*/
 	}
 	var cmdDocGen = &cobra.Command{
