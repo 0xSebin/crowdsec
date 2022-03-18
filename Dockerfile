@@ -12,7 +12,7 @@ RUN SYSTEM="docker" make release
 RUN /bin/bash wizard.sh --docker-mode
 RUN cscli hub update && cscli collections install crowdsecurity/linux
 
-FROM alpine:latest
+FROM alpine:3.15
 RUN apk update --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community && apk add --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community tzdata yq
 COPY --from=build /etc/crowdsec /etc/crowdsec
 COPY --from=build /var/lib/crowdsec /var/lib/crowdsec
